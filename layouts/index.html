@@ -1,5 +1,10 @@
 {{ define "main" }}
-  <h1><a href="{{.Site.BaseURL}}"> {{ .Title }} </a></h1>
+  <h1>
+    <a href="{{.Site.BaseURL}}"> {{ .Title }} </a>
+  </h1>
+  <p class="description">
+    {{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}
+  </p>
     {{/* {{range where $.Site.Pages.ByDate.Reverse "Type" "post"}} */}}
     {{ range .Pages.ByPublishDate.Reverse }}
       <div class="post">
