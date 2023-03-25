@@ -11,17 +11,10 @@
           <h2 class="title">
               <a href="{{.Permalink}}"> {{ .Title }} </a>
           </h2>
-          <p class="date">
-              Date: {{ .Date.Format "2006-01-02" }}
-          </p>
-          
-        {{ if .Params.tags}}
-          <p class="tags">
-          {{ range .Params.tags }}
-              <a class="tag" href="/tags/{{ . | urlize }}">#{{.}}</a>
-            {{ end }}
-          </p>
-        {{ end }}
+
+          {{- partial "date.html" . -}}
+        
+          {{- partial "tags.html" . -}}
 
           <div class="content">
             {{ .Content }}
