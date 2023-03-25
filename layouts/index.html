@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <h1><a href="{{.Site.BaseURL}}"> {{ .Title }} </a></h1>
+    {{/* {{range where $.Site.Pages.ByDate.Reverse "Type" "post"}} */}}
+    {{ range .Pages.ByPublishDate.Reverse }}
+      <div class="post">
+          <h2 class="title">
+              <a href="{{.Permalink}}"> {{ .Title }} </a>
+          </h2>
+          <p class="date">
+              Date: {{ .Date.Format "2006-01-02" }}
+          </p>
+          
+        {{ if .Params.tags}}
+          <p class="tags">
+          {{ range .Params.tags }}
+              <a class="tag" href="/tags/{{ . | urlize }}">#{{.}}</a>
+            {{ end }}
+          </p>
+        {{ end }}
+
+          <div class="content">
+            {{ .Content }}
+          </div>
+        </div>
+    {{ end }}
+{{ end }}

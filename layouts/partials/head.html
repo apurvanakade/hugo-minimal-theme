@@ -1,0 +1,74 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ $title := print .Site.Title " | " .Title }}
+    {{ if .IsHome }}
+        {{ $title = .Site.Title }}
+    {{ end }}
+    <title>{{ $title }}</title>
+    
+    <style>
+        html, body {
+        height: 100%;
+        }
+
+        body {
+        font-family: "Merriweather", serif;
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        color: #333;
+        }
+
+        a { 
+        text-decoration: none;         
+        color: inherit;
+        }
+
+        .content a { 
+        text-decoration: underline;
+        }
+
+        .tags, .date {
+        font-family: monospace;
+        font-size: small;
+        }
+
+        .post {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        }
+
+        .container {
+        margin: 100px 15px;
+        max-width: 670px;
+        }
+        @media screen and (min-width: 600px) {
+            .container {
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+        }
+
+        h2 {
+        font-weight: 700;
+        color: #111;
+        }
+
+        p, li {
+        font-size: 16px;
+        line-height: 26px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+                hyphens: auto;
+        }
+        @media screen and (min-width: 600px) {
+            p, li {
+                font-size: 18px;
+                line-height: 30px;
+            }
+        }
+    </style>
+  </head>
