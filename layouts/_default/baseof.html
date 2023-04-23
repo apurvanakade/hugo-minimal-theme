@@ -3,6 +3,9 @@
     {{- partial "head.html" . -}}
     <body>
         <div class="container">
+        <button id="switch" onclick="toggleTheme()">Switch Theme</button>
+
+
             {{- partial "header.html" . -}}
             <div id="content">
             {{- block "main" . }}{{- end }}

@@ -1,14 +1,37 @@
+.theme-light {
+   --font-family-color: ##333;
+   --header-color: #111;
+   --background-color: #fff;
+   --font-family: "Merriweather", serif;
+}
+.theme-dark {
+   --font-family-color: #dddad6;
+   --header-color: #dddad6;
+   --background-color: #424242;
+    --font-family: "Helvetica Neue", "Helvetica", "Proxima Nova", sans-serif;
+}
+
 html,
 body {
   height: 100%;
 }
 
 body {
-  font-family: "Merriweather", serif;
+  font-family: var(--font-family);
   display: flex;
   margin: auto;
   justify-content: center;
-  color: #333;
+  color: var(--font-family-color);
+  background-color: var(--background-color);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 0;
+  float: right;
 }
 
 a {
@@ -45,7 +68,7 @@ a {
 
 h2 {
   font-weight: 700;
-  color: #111;
+  color: var(--header-color);
 }
 
 p,
