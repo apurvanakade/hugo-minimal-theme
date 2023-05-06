@@ -1,10 +1,10 @@
-.theme-light {
+:root {
    --font-family-color: ##333;
    --header-color: #111;
    --background-color: #fff;
    --font-family: "Merriweather", serif;
 }
-.theme-dark {
+[data-theme="dark"] {
    --font-family-color: #dddad6;
    --header-color: #dddad6;
    --background-color: #424242;
@@ -43,8 +43,8 @@ a {
   text-decoration: underline;
 }
 
-.tags,
-.date {
+.date,
+.tag {
   font-family: monospace;
   font-size: small;
 }

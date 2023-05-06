@@ -1,0 +1,17 @@
+<div id="post-menu" class="post-menu">
+  <ul>
+    {{ range .Site.RegularPages.ByDate.Reverse }}
+      
+        <a href="{{ .Permalink }}">{{ .Title }}</a> <br/>
+        {{ range .Params.tags }}
+          <a class="tag" href="/tags/{{ . | urlize }}">#{{.}}</a>
+        {{ end }}
+        <br/> <br/>
+    {{ end }}
+  </ul>
+</div>
+
+<div id="menu" class="menu">
+  <button id="toggle-menu" class="toggle-menu">All Posts</button>
+  <button id="theme-toggle" class="toggle-menu">Switch Theme</button>       
+</div>
